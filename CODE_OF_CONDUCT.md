@@ -10,19 +10,19 @@ we pledge to act and interact in ways that contribute to an open, welcoming, div
 
 examples of behavior that contributes to a positive environment:
 
-* being respectful of differing opinions, viewpoints, and experiences
-* giving and gracefully accepting constructive feedback
-* accepting responsibility and apologizing to those affected by our mistakes
-* focusing on what is best for the overall community
-* showing empathy towards other community members
+- being respectful of differing opinions, viewpoints, and experiences
+- giving and gracefully accepting constructive feedback
+- accepting responsibility and apologizing to those affected by our mistakes
+- focusing on what is best for the overall community
+- showing empathy towards other community members
 
 examples of unacceptable behavior:
 
-* the use of sexualized language or imagery, and sexual attention or advances
-* trolling, insulting or derogatory comments, and personal or political attacks
-* public or private harassment
-* publishing others' private information without explicit permission
-* other conduct which could reasonably be considered inappropriate
+- the use of sexualized language or imagery, and sexual attention or advances
+- trolling, insulting or derogatory comments, and personal or political attacks
+- public or private harassment
+- publishing others' private information without explicit permission
+- other conduct which could reasonably be considered inappropriate
 
 ## enforcement responsibilities
 

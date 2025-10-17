@@ -1,245 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>help - media converter</title>
-    <meta name="description" content="learn how to use media converter - convert images, videos, download from youtube and instagram">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
-</head>
-<body>
+    <meta
+      name="description"
+      content="learn how to use media converter - convert images, videos, download from youtube and instagram"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>"
+    />
+  </head>
+  <body>
     <div class="container">
-        <header role="banner">
-            <div class="header-content">
-                <div class="title-section">
-                    <h1>
-                        <a href="index.html" style="text-decoration: none; color: inherit;">
-                            <span class="logo-icon" aria-hidden="true">🎬</span>
-                            <span class="logo-text">media converter</span>
-                        </a>
-                    </h1>
-                </div>
-                <nav class="header-nav">
-                    <a href="index.html">home</a>
-                    <a href="help.html" class="active">help</a>
-                    <a href="privacy.html">privacy</a>
-                    <a href="feedback.html">feedback</a>
-                </nav>
-            </div>
-        </header>
-
-        <main class="page-content">
-            <article class="help-page">
-                <h2>help & faq</h2>
-                <p class="page-intro">everything you need to know about using media converter</p>
-
-                <section class="help-category">
-                    <h3>📁 file converter</h3>
-                    <div class="help-item">
-                        <h4>how do i convert images?</h4>
-                        <ol>
-                            <li>drag & drop your image files or click the upload area</li>
-                            <li>select your desired output format (png, jpeg, webp, gif, bmp)</li>
-                            <li>adjust quality, resize, or apply filters (optional)</li>
-                            <li>click "convert"</li>
-                            <li>download your converted files</li>
-                        </ol>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>how do i convert videos?</h4>
-                        <ol>
-                            <li>upload your video files</li>
-                            <li>switch media type to "video"</li>
-                            <li>pick your output format (mp4, webm, avi, mov)</li>
-                            <li>click "convert"</li>
-                            <li>wait for processing (may take a few minutes)</li>
-                            <li>download your converted video</li>
-                        </ol>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>what formats are supported?</h4>
-                        <p><strong>images:</strong> webp, png, jpeg/jpg, gif, bmp</p>
-                        <p><strong>videos:</strong> mp4, webm, avi, mov</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>can i convert multiple files at once?</h4>
-                        <p>yes! just select or drag multiple files. they'll all be converted to your chosen format.</p>
-                    </div>
-                </section>
-
-                <section class="help-category">
-                    <h3>🎥 youtube downloader</h3>
-                    <div class="help-item">
-                        <h4>how do i download youtube videos?</h4>
-                        <ol>
-                            <li>switch to the "youtube" tab</li>
-                            <li>paste a youtube video url</li>
-                            <li>click "fetch" to load video info</li>
-                            <li>choose quality (1080p, 720p, 480p, etc.)</li>
-                            <li>select video format (mp4, webm, mkv)</li>
-                            <li>click "download & convert"</li>
-                        </ol>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>can i download just the audio?</h4>
-                        <p>yes! change "download type" to "audio only" and pick your format (mp3, m4a, opus, flac).</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>do playlists work?</h4>
-                        <p>yes! paste a playlist url and all videos will be downloaded.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>what's the best quality?</h4>
-                        <p>select "highest available" to automatically get the best quality the video offers.</p>
-                    </div>
-                </section>
-
-                <section class="help-category">
-                    <h3>📸 instagram downloader</h3>
-                    <div class="help-item">
-                        <h4>how do i download from instagram?</h4>
-                        <ol>
-                            <li>go to the "instagram" tab</li>
-                            <li>paste an instagram post url</li>
-                            <li>click "fetch" to load preview</li>
-                            <li>choose quality</li>
-                            <li>click "download media"</li>
-                        </ol>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>what can i download?</h4>
-                        <p>photos, videos, reels, and stories are all supported.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>how do i get an instagram url?</h4>
-                        <p>tap the three dots on any post → "copy link" → paste here</p>
-                    </div>
-                </section>
-
-                <section class="help-category">
-                    <h3>⚙️ advanced features</h3>
-                    <div class="help-item">
-                        <h4>resize options</h4>
-                        <p>set custom width and height, or use presets like 1080p, 720p, web, or thumbnail size.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>quality & compression</h4>
-                        <p>adjust the quality slider (10-100%) to balance file size and image quality.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>image filters</h4>
-                        <p>adjust brightness, contrast, and saturation before converting.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>batch rename</h4>
-                        <p>use patterns like {name}, {index}, {format}, {date}, {time} to automatically rename files.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>metadata removal</h4>
-                        <p>enable "remove metadata" to strip exif data from images for privacy.</p>
-                    </div>
-                </section>
-
-                <section class="help-category">
-                    <h3>🔒 privacy & security</h3>
-                    <div class="help-item">
-                        <h4>are my files uploaded to a server?</h4>
-                        <p>no! file conversions happen entirely in your browser using javascript and webassembly. your files never leave your device.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>does this work offline?</h4>
-                        <p>yes! the file converter works completely offline once loaded. youtube and instagram features require internet to fetch videos.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>do you store my data?</h4>
-                        <p>nope. we don't track, log, or store anything. see our <a href="privacy.html">privacy policy</a> for details.</p>
-                    </div>
-                </section>
-
-                <section class="help-category">
-                    <h3>❓ troubleshooting</h3>
-                    <div class="help-item">
-                        <h4>conversion is slow or fails</h4>
-                        <p>large files take longer. try reducing quality or size. close other browser tabs to free up memory.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>youtube/instagram download fails</h4>
-                        <p>make sure you're using a valid public url. private or age-restricted content may not work.</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>browser compatibility</h4>
-                        <p>works best on chrome, edge, firefox, and safari (desktop and mobile).</p>
-                    </div>
-
-                    <div class="help-item">
-                        <h4>still need help?</h4>
-                        <p>send us <a href="feedback.html">feedback</a> and we'll help you out!</p>
-                    </div>
-                </section>
-            </article>
-        </main>
-
-        <footer role="contentinfo">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>about</h4>
-                    <p>convert images and videos in your browser. no uploads, no tracking.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>features</h4>
-                    <ul>
-                        <li>image & video conversion</li>
-                        <li>youtube downloader</li>
-                        <li>instagram downloader</li>
-                        <li>everything runs locally</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>tech</h4>
-                    <ul>
-                        <li>powered by ffmpeg.wasm</li>
-                        <li>no server uploads</li>
-                        <li>open source</li>
-                        <li>works offline*</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>links</h4>
-                    <ul>
-                        <li><a href="help.html">help</a></li>
-                        <li><a href="privacy.html">privacy</a></li>
-                        <li><a href="feedback.html">feedback</a></li>
-                        <li><a href="https://github.com/fentbuscoding" target="_blank" rel="noopener noreferrer">github</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 fentbuscoding</p>
-                <p class="footer-note">*file converter works offline. youtube/instagram need internet.</p>
-            </div>
-        </footer>
-
-        <div class="watermark">
-            <span class="brand">fentbuscoding</span><br>
-            <span class="alias">(schoolbusgaming)</span>
+      <header role="banner">
+        <div class="header-content">
+          <div class="title-section">
+            <h1>
+              <a href="index.html" style="text-decoration: none; color: inherit">
+                <span class="logo-icon" aria-hidden="true">🎬</span>
+                <span class="logo-text">media converter</span>
+              </a>
+            </h1>
+          </div>
+          <nav class="header-nav">
+            <a href="index.html">home</a>
+            <a href="help.html" class="active">help</a>
+            <a href="privacy.html">privacy</a>
+            <a href="feedback.html">feedback</a>
+          </nav>
         </div>
+      </header>
+
+      <main class="page-content">
+        <article class="help-page">
+          <h2>help & faq</h2>
+          <p class="page-intro">everything you need to know about using media converter</p>
+
+          <section class="help-category">
+            <h3>📁 file converter</h3>
+            <div class="help-item">
+              <h4>how do i convert images?</h4>
+              <ol>
+                <li>drag & drop your image files or click the upload area</li>
+                <li>select your desired output format (png, jpeg, webp, gif, bmp)</li>
+                <li>adjust quality, resize, or apply filters (optional)</li>
+                <li>click "convert"</li>
+                <li>download your converted files</li>
+              </ol>
+            </div>
+
+            <div class="help-item">
+              <h4>how do i convert videos?</h4>
+              <ol>
+                <li>upload your video files</li>
+                <li>switch media type to "video"</li>
+                <li>pick your output format (mp4, webm, avi, mov)</li>
+                <li>click "convert"</li>
+                <li>wait for processing (may take a few minutes)</li>
+                <li>download your converted video</li>
+              </ol>
+            </div>
+
+            <div class="help-item">
+              <h4>what formats are supported?</h4>
+              <p><strong>images:</strong> webp, png, jpeg/jpg, gif, bmp</p>
+              <p><strong>videos:</strong> mp4, webm, avi, mov</p>
+            </div>
+
+            <div class="help-item">
+              <h4>can i convert multiple files at once?</h4>
+              <p>
+                yes! just select or drag multiple files. they'll all be converted to your chosen
+                format.
+              </p>
+            </div>
+          </section>
+
+          <section class="help-category">
+            <h3>🎥 youtube downloader</h3>
+            <div class="help-item">
+              <h4>how do i download youtube videos?</h4>
+              <ol>
+                <li>switch to the "youtube" tab</li>
+                <li>paste a youtube video url</li>
+                <li>click "fetch" to load video info</li>
+                <li>choose quality (1080p, 720p, 480p, etc.)</li>
+                <li>select video format (mp4, webm, mkv)</li>
+                <li>click "download & convert"</li>
+              </ol>
+            </div>
+
+            <div class="help-item">
+              <h4>can i download just the audio?</h4>
+              <p>
+                yes! change "download type" to "audio only" and pick your format (mp3, m4a, opus,
+                flac).
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>do playlists work?</h4>
+              <p>yes! paste a playlist url and all videos will be downloaded.</p>
+            </div>
+
+            <div class="help-item">
+              <h4>what's the best quality?</h4>
+              <p>
+                select "highest available" to automatically get the best quality the video offers.
+              </p>
+            </div>
+          </section>
+
+          <section class="help-category">
+            <h3>📸 instagram downloader</h3>
+            <div class="help-item">
+              <h4>how do i download from instagram?</h4>
+              <ol>
+                <li>go to the "instagram" tab</li>
+                <li>paste an instagram post url</li>
+                <li>click "fetch" to load preview</li>
+                <li>choose quality</li>
+                <li>click "download media"</li>
+              </ol>
+            </div>
+
+            <div class="help-item">
+              <h4>what can i download?</h4>
+              <p>photos, videos, reels, and stories are all supported.</p>
+            </div>
+
+            <div class="help-item">
+              <h4>how do i get an instagram url?</h4>
+              <p>tap the three dots on any post → "copy link" → paste here</p>
+            </div>
+          </section>
+
+          <section class="help-category">
+            <h3>⚙️ advanced features</h3>
+            <div class="help-item">
+              <h4>resize options</h4>
+              <p>
+                set custom width and height, or use presets like 1080p, 720p, web, or thumbnail
+                size.
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>quality & compression</h4>
+              <p>adjust the quality slider (10-100%) to balance file size and image quality.</p>
+            </div>
+
+            <div class="help-item">
+              <h4>image filters</h4>
+              <p>adjust brightness, contrast, and saturation before converting.</p>
+            </div>
+
+            <div class="help-item">
+              <h4>batch rename</h4>
+              <p>
+                use patterns like {name}, {index}, {format}, {date}, {time} to automatically rename
+                files.
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>metadata removal</h4>
+              <p>enable "remove metadata" to strip exif data from images for privacy.</p>
+            </div>
+          </section>
+
+          <section class="help-category">
+            <h3>🔒 privacy & security</h3>
+            <div class="help-item">
+              <h4>are my files uploaded to a server?</h4>
+              <p>
+                no! file conversions happen entirely in your browser using javascript and
+                webassembly. your files never leave your device.
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>does this work offline?</h4>
+              <p>
+                yes! the file converter works completely offline once loaded. youtube and instagram
+                features require internet to fetch videos.
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>do you store my data?</h4>
+              <p>
+                nope. we don't track, log, or store anything. see our
+                <a href="privacy.html">privacy policy</a> for details.
+              </p>
+            </div>
+          </section>
+
+          <section class="help-category">
+            <h3>❓ troubleshooting</h3>
+            <div class="help-item">
+              <h4>conversion is slow or fails</h4>
+              <p>
+                large files take longer. try reducing quality or size. close other browser tabs to
+                free up memory.
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>youtube/instagram download fails</h4>
+              <p>
+                make sure you're using a valid public url. private or age-restricted content may not
+                work.
+              </p>
+            </div>
+
+            <div class="help-item">
+              <h4>browser compatibility</h4>
+              <p>works best on chrome, edge, firefox, and safari (desktop and mobile).</p>
+            </div>
+
+            <div class="help-item">
+              <h4>still need help?</h4>
+              <p>send us <a href="feedback.html">feedback</a> and we'll help you out!</p>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <footer role="contentinfo">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>about</h4>
+            <p>convert images and videos in your browser. no uploads, no tracking.</p>
+          </div>
+          <div class="footer-section">
+            <h4>features</h4>
+            <ul>
+              <li>image & video conversion</li>
+              <li>youtube downloader</li>
+              <li>instagram downloader</li>
+              <li>everything runs locally</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>tech</h4>
+            <ul>
+              <li>powered by ffmpeg.wasm</li>
+              <li>no server uploads</li>
+              <li>open source</li>
+              <li>works offline*</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>links</h4>
+            <ul>
+              <li><a href="help.html">help</a></li>
+              <li><a href="privacy.html">privacy</a></li>
+              <li><a href="feedback.html">feedback</a></li>
+              <li>
+                <a href="https://github.com/fentbuscoding" target="_blank" rel="noopener noreferrer"
+                  >github</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 fentbuscoding</p>
+          <p class="footer-note">*file converter works offline. youtube/instagram need internet.</p>
+        </div>
+      </footer>
+
+      <div class="watermark">
+        <span class="brand">fentbuscoding</span><br />
+        <span class="alias">(schoolbusgaming)</span>
+      </div>
     </div>
-</body>
+  </body>
 </html>

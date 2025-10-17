@@ -8,6 +8,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 ## [unreleased]
 
 ### planned
+
 - dark/light theme toggle
 - more video formats support
 - batch download for youtube playlists
@@ -17,6 +18,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] - 2025-10-17
 
 ### added
+
 - complete ui/ux overhaul with modern design
 - help, privacy, and feedback pages
 - comprehensive footer with navigation
@@ -31,6 +33,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 - responsive design for all screen sizes
 
 ### improved
+
 - lowercase, casual text throughout
 - better error messages and user feedback
 - enhanced preview system with real backend data
@@ -38,6 +41,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 - professional styling and animations
 
 ### fixed
+
 - instagram download path issues
 - youtube preview fetching
 - mobile responsive layouts
@@ -45,6 +49,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-01-01
 
 ### added
+
 - initial release
 - image format conversion (webp, png, jpeg, gif, bmp)
 - video format conversion (mp4, webm, avi, mov)
@@ -59,6 +64,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 - custom filename patterns
 
 ### features
+
 - completely client-side processing
 - no file uploads to servers
 - works offline (for file conversion)

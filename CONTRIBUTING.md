@@ -7,6 +7,7 @@ thanks for considering contributing to media converter! 🎉
 ### reporting bugs 🐛
 
 if you find a bug, please create an issue with:
+
 - clear description of the bug
 - steps to reproduce
 - expected vs actual behavior
@@ -16,6 +17,7 @@ if you find a bug, please create an issue with:
 ### suggesting features ✨
 
 we love new ideas! create an issue with:
+
 - clear description of the feature
 - why it would be useful
 - how it should work
@@ -24,11 +26,13 @@ we love new ideas! create an issue with:
 ### submitting code 💻
 
 1. **fork the repository**
+
    ```bash
    git clone https://github.com/fentbuscoding/media-converter.git
    ```
 
 2. **create a branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    # or
@@ -42,6 +46,7 @@ we love new ideas! create an issue with:
    - keep commits atomic and well-described
 
 4. **commit your changes**
+
    ```bash
    git commit -m "add: your feature description"
    # or
@@ -49,6 +54,7 @@ we love new ideas! create an issue with:
    ```
 
 5. **push to your fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -61,6 +67,7 @@ we love new ideas! create an issue with:
 ## development setup
 
 ### prerequisites
+
 - node.js 16+ and npm
 - python 3.8+ (for backend)
 - git
@@ -68,22 +75,25 @@ we love new ideas! create an issue with:
 ### installation
 
 1. clone the repository
+
    ```bash
    git clone https://github.com/fentbuscoding/media-converter.git
    cd media-converter
    ```
 
 2. install dependencies
+
    ```bash
    npm install
    pip install -r requirements.txt
    ```
 
 3. start the development servers
+
    ```bash
    # frontend (port 8000)
    npm run dev
-   
+
    # backend (port 3000)
    npm start
    ```
@@ -93,6 +103,7 @@ we love new ideas! create an issue with:
 ## code style
 
 ### javascript
+
 - use ES6+ features
 - prefer `const` and `let` over `var`
 - use arrow functions where appropriate
@@ -100,12 +111,14 @@ we love new ideas! create an issue with:
 - keep functions small and focused
 
 ### css
+
 - use css variables for theming
 - follow BEM naming where it makes sense
 - keep selectors simple
 - mobile-first responsive design
 
 ### python
+
 - follow PEP 8 style guide
 - use type hints where helpful
 - add docstrings to functions
@@ -129,6 +142,7 @@ chore: maintenance tasks
 ## testing
 
 before submitting:
+
 - test in chrome, firefox, safari, edge
 - test on mobile devices
 - test file conversion with various formats
