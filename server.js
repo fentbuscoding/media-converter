@@ -885,7 +885,7 @@ app.get('/api/downloads', (req, res) => {
   try {
     const { limit = 50, offset = 0, sort = 'newest' } = req.query;
 
-    let files = fs
+    const files = fs
       .readdirSync(downloadsDir)
       .filter(f => !f.startsWith('.')) // Exclude hidden files
       .map(filename => {

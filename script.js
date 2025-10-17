@@ -522,7 +522,7 @@ class MediaConverter {
     const uniqueFormats = [...new Set(formats)];
 
     // Suggest optimal format
-    let suggestedFormat = 'mp4'; // Most compatible
+    const suggestedFormat = 'mp4'; // Most compatible
 
     const videoFormatSelect = document.getElementById('videoFormatSelect');
     if (videoFormatSelect) {
