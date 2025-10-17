@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>media converter - images, videos, youtube & instagram</title>
+    <meta name="title" content="media converter - images, videos, youtube & instagram">
+    <meta name="description" content="convert images and videos, download from youtube and instagram. free and fast.">
+    <meta name="keywords" content="image converter, video converter, youtube downloader, instagram downloader, webp converter, format converter">
+    <meta name="author" content="fentbuscoding">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/">
+    <meta property="og:title" content="media converter - images, videos, youtube & instagram">
+    <meta property="og:description" content="convert images and videos, download from youtube and instagram">
+    <meta property="og:image" content="https://yoursite.com/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yoursite.com/">
+    <meta property="twitter:title" content="media converter">
+    <meta property="twitter:description" content="convert images and videos, download from youtube and instagram">
+    <meta property="twitter:image" content="https://yoursite.com/twitter-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- FFmpeg.wasm for video conversion - using ESM modules -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@ffmpeg/ffmpeg": "https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.15/dist/esm/index.js",
+            "@ffmpeg/util": "https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.2/dist/esm/index.js"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "media converter",
+        "description": "convert images and videos, download from youtube and instagram",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body role="document">
+    <div class="container">
+        <header role="banner">
+            <div class="header-content">
+                <div class="title-section">
+                    <h1>
+                        <span class="logo-icon" aria-hidden="true">🎬</span>
+                        <span class="logo-text">media converter</span>
+                    </h1>
+                    <p class="tagline">convert images, videos, download from youtube & instagram - <strong>100% free</strong></p>
+                </div>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button id="helpBtn" class="help-btn" aria-label="Help" title="How to use">
+                        <span class="help-icon">❓</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Feature highlights -->
+            <div class="feature-badges" role="list">
+                <span class="badge" role="listitem" title="No server uploads">
+                    <span aria-hidden="true">🔒</span> Client-side processing
+                </span>
+                <span class="badge" role="listitem" title="No file size limits">
+                    <span aria-hidden="true">⚡</span> Unlimited conversions
+                </span>
+                <span class="badge" role="listitem" title="No account required">
+                    <span aria-hidden="true">�</span> 100% Free
+                </span>
+                <span class="badge" role="listitem" title="Works offline">
+                    <span aria-hidden="true">📱</span> No internet needed*
+                </span>
+            </div>
+        </header>
+
+        <main id="main-content" role="main">
+            <!-- Mode Switcher Tabs -->
+            <nav class="mode-switcher" role="navigation" aria-label="converter modes">
+                <div class="mode-tabs" role="tablist">
+                    <button class="mode-tab active" 
+                            data-mode="file" 
+                            role="tab" 
+                            aria-selected="true" 
+                            aria-controls="fileMode"
+                            id="tab-file">
+                        <span class="tab-icon" aria-hidden="true">📁</span>
+                        <span class="tab-text">file converter</span>
+                        <span class="tab-badge">images & videos</span>
+                    </button>
+                    <button class="mode-tab" 
+                            data-mode="youtube" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="youtubeMode"
+                            id="tab-youtube">
+                        <span class="tab-icon" aria-hidden="true">🎥</span>
+                        <span class="tab-text">youtube</span>
+                        <span class="tab-badge">download & convert</span>
+                    </button>
+                    <button class="mode-tab" 
+                            data-mode="instagram" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="instagramMode"
+                            id="tab-instagram">
+                        <span class="tab-icon" aria-hidden="true">📸</span>
+                        <span class="tab-text">instagram</span>
+                        <span class="tab-badge">photos & reels</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- File Converter Mode -->
+            <div class="converter-mode" id="fileMode" role="tabpanel" aria-labelledby="tab-file">
+                <!-- Upload Section -->
+                <section class="upload-section" aria-label="file upload area">
+                    <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="click or drag files to upload">
+                        <div class="upload-content">
+                            <div class="upload-icon" aria-hidden="true">
+                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <h3 class="upload-title">drag & drop files here</h3>
+                            <p class="upload-subtitle">or click to browse</p>
+                            <div class="upload-formats">
+                                <div class="format-group">
+                                    <strong>images:</strong> webp, png, jpeg, gif, bmp
+                                </div>
+                                <div class="format-group">
+                                    <strong>videos:</strong> mp4, webm, avi, mov
+                                </div>
+                            </div>
+                            <p class="upload-note">
+                                <span aria-hidden="true">🔒</span> 
+                                your files never leave your device
+                            </p>
+                            <input type="file" 
+                                   id="fileInput" 
+                                   accept="image/*,video/*" 
+                                   multiple 
+                                   aria-label="select files to convert"
+                                   title="select image or video files">
+                        </div>
+                    </div>
+                </section>
+
+            <!-- Conversion Options -->
+            <section class="options-section" id="optionsSection" style="display: none;" aria-label="conversion options">
+                <div class="options-card">
+                    <div class="options-header">
+                        <h3>conversion options</h3>
+                        <button id="resetOptions" class="reset-btn" aria-label="reset all options to default" title="reset to defaults">
+                            <span aria-hidden="true">↺</span> reset
+                        </button>
+                    </div>
+                    
+                    <!-- Media Type Selection -->
+                    <div class="option-group">
+                        <label for="mediaType">media type:</label>
+                        <select id="mediaType">
+                            <option value="image">image</option>
+                            <option value="video">video</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Format Selection -->
+                    <div class="option-group" id="imageFormats">
+                        <label for="formatSelect">format:</label>
+                        <select id="formatSelect">
+                            <option value="png">png</option>
+                            <option value="jpeg">jpeg</option>
+                            <option value="webp">webp</option>
+                            <option value="gif">gif</option>
+                            <option value="bmp">bmp</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group" id="videoFormats" style="display: none;">
+                        <label for="videoFormatSelect">format:</label>
+                        <select id="videoFormatSelect">
+                            <option value="mp4">mp4</option>
+                            <option value="webm">webm</option>
+                            <option value="avi">avi</option>
+                            <option value="mov">mov</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Advanced Options Toggle -->
+                    <div class="option-group">
+                        <button id="advancedToggle" class="toggle-btn">advanced options ▼</button>
+                    </div>
+                    
+                    <!-- Advanced Options Panel -->
+                    <div id="advancedOptions" class="advanced-panel" style="display: none;">
+                        
+                        <!-- Resize Options -->
+                        <div class="option-section">
+                            <h4>resize options</h4>
+                            <div class="resize-controls">
+                                <div class="resize-row">
+                                    <input type="number" id="resizeWidth" placeholder="width" min="1">
+                                    <span class="resize-separator">×</span>
+                                    <input type="number" id="resizeHeight" placeholder="height" min="1">
+                                    <button id="lockAspect" class="aspect-btn" title="lock aspect ratio">🔒</button>
+                                </div>
+                                <div class="resize-presets">
+                                    <button class="preset-btn" data-width="1920" data-height="1080">1080p</button>
+                                    <button class="preset-btn" data-width="1280" data-height="720">720p</button>
+                                    <button class="preset-btn" data-width="800" data-height="600">web</button>
+                                    <button class="preset-btn" data-width="400" data-height="400">thumbnail</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quality and Compression -->
+                        <div class="option-section" id="qualitySection">
+                            <h4>quality & compression</h4>
+                            <div class="option-group" id="qualityGroup">
+                                <label for="qualitySlider">quality: <span id="qualityValue">90</span>%</label>
+                                <input type="range" id="qualitySlider" min="10" max="100" value="90">
+                            </div>
+                            <div class="compression-presets">
+                                <button class="preset-btn" data-quality="95">high quality</button>
+                                <button class="preset-btn" data-quality="80">web optimized</button>
+                                <button class="preset-btn" data-quality="60">small file</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Filters -->
+                        <div class="option-section" id="filtersSection">
+                            <h4>image filters</h4>
+                            <div class="filter-controls">
+                                <div class="filter-row">
+                                    <label for="brightnessSlider">brightness: <span id="brightnessValue">0</span></label>
+                                    <input type="range" id="brightnessSlider" min="-100" max="100" value="0">
+                                </div>
+                                <div class="filter-row">
+                                    <label for="contrastSlider">contrast: <span id="contrastValue">0</span></label>
+                                    <input type="range" id="contrastSlider" min="-100" max="100" value="0">
+                                </div>
+                                <div class="filter-row">
+                                    <label for="saturationSlider">saturation: <span id="saturationValue">0</span></label>
+                                    <input type="range" id="saturationSlider" min="-100" max="100" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Batch Operations -->
+                        <div class="option-section">
+                            <h4>batch operations</h4>
+                            <div class="batch-controls">
+                                <div class="option-group">
+                                    <label for="filenamePattern">rename pattern:</label>
+                                    <input type="text" id="filenamePattern" placeholder="{name}_{original_format}_to_{format}" value="{name}" title="Available: {name}, {index}, {format}, {original_format}, {date}, {time}">
+                                    <small class="pattern-help">Available: {name}, {index}, {format}, {original_format}, {date}, {time}</small>
+                                </div>
+                                <div class="batch-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="stripMetadata">
+                                        <span class="checkmark"></span>
+                                        remove metadata
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="autoOptimize">
+                                        <span class="checkmark"></span>
+                                        auto optimize
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <button id="convertBtn" class="convert-btn">convert</button>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section" id="previewSection" style="display: none;">
+                <div class="preview-header">
+                    <h3>results</h3>
+                    <div class="view-toggle">
+                        <button id="gridView" class="view-btn active" data-view="grid">grid</button>
+                        <button id="listView" class="view-btn" data-view="list">list</button>
+                        <button id="comparisonView" class="view-btn" data-view="comparison">comparison</button>
+                    </div>
+                </div>
+                <div class="size-comparison-chart" id="sizeChart" style="display: none;">
+                    <h4>file size comparison</h4>
+                    <div class="chart-container" id="chartContainer"></div>
+                </div>
+                <div class="images-container" id="imagesContainer">
+                    <!-- Converted images will be displayed here -->
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">processing...</p>
+            </section>
+            </div>
+
+            <!-- YouTube Mode -->
+            <div class="converter-mode" id="youtubeMode" style="display: none;">
+                <section class="youtube-section">
+                    <div class="youtube-card">
+                        <h3>🎥 youtube downloader</h3>
+                        <p class="youtube-description">download and convert youtube videos</p>
+                        
+                        <div class="youtube-input-group">
+                            <input type="text" id="youtubeUrl" placeholder="paste youtube URL here..." class="youtube-input">
+                            <button id="fetchVideoBtn" class="fetch-btn">fetch</button>
+                        </div>
+                        
+                        <!-- Video Info Display -->
+                        <div id="videoInfo" class="video-info" style="display: none;">
+                            <div class="video-preview">
+                                <img id="videoThumbnail" src="" alt="thumbnail">
+                                <div class="video-details">
+                                    <h4 id="videoTitle">Video Title</h4>
+                                    <p id="videoAuthor" class="video-author">Channel Name</p>
+                                    <p id="videoDuration" class="video-duration">Duration: 0:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="download-options">
+                                <div class="option-group">
+                                    <label for="downloadType">download type:</label>
+                                    <select id="downloadType">
+                                        <option value="video">video + audio</option>
+                                        <option value="audio">audio only</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="option-group" id="videoQualityGroup">
+                                    <label for="videoQuality">quality:</label>
+                                    <select id="videoQuality">
+                                        <option value="highest">highest available</option>
+                                        <option value="1080">1080p (Full HD)</option>
+                                        <option value="720">720p (HD)</option>
+                                        <option value="480">480p (SD)</option>
+                                        <option value="360">360p</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="option-group" id="audioFormatGroup" style="display: none;">
+                                    <label for="audioFormat">audio format:</label>
+                                    <select id="audioFormat">
+                                        <option value="mp3">MP3</option>
+                                        <option value="m4a">M4A (AAC)</option>
+                                        <option value="opus">Opus</option>
+                                        <option value="flac">FLAC</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="option-group" id="videoFormatGroup">
+                                    <label for="ytVideoFormat">video format:</label>
+                                    <select id="ytVideoFormat">
+                                        <option value="mp4">MP4</option>
+                                        <option value="webm">WebM</option>
+                                        <option value="mkv">MKV</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button id="downloadVideoBtn" class="download-btn">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">download & convert</span>
+                            </button>
+                        </div>
+                        
+                        <!-- YouTube Results Section -->
+                        <div id="youtubeResults" class="preview-section" style="display: none;">
+                            <div class="preview-header">
+                                <h3>downloaded files</h3>
+                            </div>
+                            <div class="results-grid" id="youtubeResultsGrid">
+                                <!-- Results will be added here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Playlist Support -->
+                        <div class="youtube-notice">
+                            <p>💡 <strong>tip:</strong> supports single videos and playlists</p>
+                            <p>⚡ videos are processed in your browser using ffmpeg</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Instagram Mode -->
+            <div class="converter-mode" id="instagramMode" style="display: none;">
+                <section class="instagram-section">
+                    <div class="instagram-card">
+                        <h3>📸 instagram downloader</h3>
+                        <p class="instagram-description">download photos, videos, reels, and stories</p>
+                        
+                        <div class="instagram-input-group">
+                            <input type="text" id="instagramUrl" placeholder="paste instagram URL here..." class="instagram-input">
+                            <button id="fetchInstagramBtn" class="fetch-btn">fetch</button>
+                        </div>
+                        
+                        <!-- Media Info Display -->
+                        <div id="instagramInfo" class="instagram-info" style="display: none;">
+                            <div class="instagram-preview">
+                                <img id="instagramThumbnail" src="" alt="thumbnail">
+                                <div class="instagram-details">
+                                    <h4 id="instagramCaption">Caption</h4>
+                                    <p id="instagramAuthor" class="instagram-author">@username</p>
+                                    <p id="instagramType" class="instagram-type">Type: Photo</p>
+                                </div>
+                            </div>
+                            
+                            <div class="download-options">
+                                <div class="option-group">
+                                    <label for="instagramQuality">quality:</label>
+                                    <select id="instagramQuality">
+                                        <option value="highest">highest available</option>
+                                        <option value="medium">medium quality</option>
+                                        <option value="thumbnail">thumbnail</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button id="downloadInstagramBtn" class="download-btn">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">download media</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Instagram Results Section -->
+                        <div id="instagramResults" class="preview-section" style="display: none;">
+                            <div class="preview-header">
+                                <h3>downloaded files</h3>
+                            </div>
+                            <div class="results-grid" id="instagramResultsGrid">
+                                <!-- Results will be added here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Features Notice -->
+                        <div class="instagram-notice">
+                            <p>💡 <strong>tip:</strong> supports photos, videos, reels, and stories</p>
+                            <p>⚡ download media in original quality</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+        </main>
+
+        <footer role="contentinfo">
+            <div class="footer-wrapper">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h3>🎬 media converter</h3>
+                        <p>convert images and videos right in your browser. everything stays on your device.</p>
+                        <div class="footer-stats">
+                            <span>⚡ instant</span>
+                            <span>🔒 private</span>
+                            <span>🆓 free</span>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links-grid">
+                        <div class="footer-column">
+                            <h4>features</h4>
+                            <ul>
+                                <li>image conversion</li>
+                                <li>video conversion</li>
+                                <li>youtube downloader</li>
+                                <li>instagram downloader</li>
+                                <li>batch processing</li>
+                                <li>filters & resize</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column">
+                            <h4>formats</h4>
+                            <ul>
+                                <li>webp, png, jpeg</li>
+                                <li>gif, bmp</li>
+                                <li>mp4, webm, avi</li>
+                                <li>mp3, m4a, opus</li>
+                                <li>& more</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column">
+                            <h4>resources</h4>
+                            <ul>
+                                <li><a href="help.html">help & faq</a></li>
+                                <li><a href="privacy.html">privacy policy</a></li>
+                                <li><a href="feedback.html">send feedback</a></li>
+                                <li><a href="https://github.com/fentbuscoding" target="_blank" rel="noopener noreferrer">github</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <div class="footer-left">
+                            <p>&copy; 2025 <strong>fentbuscoding</strong></p>
+                            <span class="footer-divider">•</span>
+                            <p>built with ❤️ and ffmpeg</p>
+                        </div>
+                        <div class="footer-right">
+                            <a href="https://github.com/fentbuscoding" target="_blank" rel="noopener noreferrer" class="footer-social">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-note">
+                        <p>*file converter works completely offline. youtube and instagram downloads require internet connection.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Watermark -->
+        <div class="watermark" aria-label="Created by fentbuscoding">
+            <span class="brand">fentbuscoding</span><br>
+            <span class="alias">(schoolbusgaming)</span>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="helpModal" class="modal" role="dialog" aria-labelledby="helpModalTitle" aria-hidden="true" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="helpModalTitle">quick start</h2>
+                    <button class="modal-close" aria-label="close help modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-section">
+                        <h3>📁 file converter</h3>
+                        <ol>
+                            <li>drag & drop files or click to browse</li>
+                            <li>pick output format</li>
+                            <li>hit convert</li>
+                            <li>download your files</li>
+                        </ol>
+                    </div>
+                    <div class="help-section">
+                        <h3>🎥 youtube downloader</h3>
+                        <ol>
+                            <li>paste youtube url</li>
+                            <li>click fetch</li>
+                            <li>pick quality and format</li>
+                            <li>download</li>
+                        </ol>
+                    </div>
+                    <div class="help-section">
+                        <h3>📸 instagram downloader</h3>
+                        <ol>
+                            <li>paste instagram url</li>
+                            <li>click fetch</li>
+                            <li>pick quality</li>
+                            <li>download</li>
+                        </ol>
+                    </div>
+                    <div class="help-section">
+                        <h3>🔒 privacy</h3>
+                        <p>everything happens in your browser. your files never get uploaded anywhere.</p>
+                        <p><a href="help.html" style="color: var(--accent-primary);">view full help guide →</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" aria-hidden="true" style="display: none;">
+            <div class="loading-spinner" role="status">
+                <div class="spinner"></div>
+                <p>processing...</p>
+            </div>
+        </div>
+
+        <!-- Notification Toast -->
+        <div id="toastContainer" class="toast-container" role="alert" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <!-- Service Worker for offline support -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Uncomment when you have a service worker file
+                // navigator.serviceWorker.register('/sw.js').catch(() => {});
+            });
+        }
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
