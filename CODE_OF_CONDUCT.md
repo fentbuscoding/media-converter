@@ -36,13 +36,13 @@ this code of conduct applies within all community spaces, and also applies when 
 
 ## enforcement
 
-instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project team at fentbuscoding@example.com. all complaints will be reviewed and investigated promptly and fairly.
+instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project team at [fentbuscoding@gmail.com](mailto:fentbuscoding@gmail.com). all complaints will be reviewed and investigated promptly and fairly.
 
 all project maintainers are obligated to respect the privacy and security of the reporter of any incident.
 
 ## attribution
 
-this code of conduct is adapted from the [contributor covenant](https://www.contributor-covenant.org), version 2.0.
+this code of conduct is adapted from the [contributor covenant](https://www.contributor-covenant.org), version 3.0.
 
 ## questions?
 
